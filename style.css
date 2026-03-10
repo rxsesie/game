@@ -1,0 +1,80 @@
+:root {
+  color-scheme: dark;
+  font-family: "Quicksand", "Inter", system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 10% 15%, rgba(142, 214, 178, 0.2), transparent 33%),
+    radial-gradient(circle at 88% 84%, rgba(73, 136, 180, 0.28), transparent 35%),
+    linear-gradient(180deg, #0d1d23 0%, #081318 100%);
+  color: #ebfff6;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+#ui {
+  width: min(1250px, 95vw);
+  margin: 0.75rem auto 0.45rem;
+  padding: 0.9rem 1.1rem;
+  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(12, 34, 31, 0.9), rgba(7, 23, 23, 0.82));
+  border: 1px solid rgba(167, 236, 201, 0.28);
+  box-shadow: 0 14px 44px rgba(0, 0, 0, 0.42);
+  backdrop-filter: blur(10px);
+}
+
+.top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.35rem;
+  letter-spacing: 0.02em;
+}
+
+.chips {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.chips span {
+  padding: 0.33rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid rgba(193, 248, 224, 0.24);
+  background: rgba(135, 209, 177, 0.12);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+#ui p {
+  margin: 0.45rem 0 0.5rem;
+  color: #bee3d4;
+}
+
+#status {
+  font-size: 0.96rem;
+  line-height: 1.4;
+  color: #f5fffb;
+}
+
+canvas {
+  display: block;
+  margin: 0 auto 0.7rem;
+  width: min(1250px, 95vw);
+  border-radius: 18px;
+  border: 1px solid rgba(190, 242, 219, 0.3);
+  box-shadow:
+    0 20px 52px rgba(0, 0, 0, 0.52),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+}
