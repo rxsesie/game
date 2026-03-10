@@ -203,7 +203,7 @@ onUpdate(() => {
 });
 
 function drawTree(worldPos, type) {
-  drawEllipse({ pos: worldPos.add(vec2(0, 12)), width: 24, height: 10, color: rgb(18, 26, 24), opacity: 0.42 });
+  drawEllipse({ pos: worldPos.add(vec2(0, 12)), radiusX: 12, radiusY: 5, color: rgb(18, 26, 24), opacity: 0.42 });
   drawRect({ pos: worldPos.add(vec2(-2, -2)), width: 5, height: 16, color: rgb(108, 75, 56), radius: 5 });
   if (type === "pine") {
     drawTriangle({ p1: worldPos.add(vec2(-12, 2)), p2: worldPos.add(vec2(12, 2)), p3: worldPos.add(vec2(0, -18)), color: rgb(82, 151, 106) });
@@ -259,8 +259,8 @@ onDraw(() => {
       drawCircle({ pos: pos.add(vec2(3, 5)), radius: 2.2, color: rgb(255, 239, 170) });
     }
     if (p.kind === "rock") {
-      drawEllipse({ pos, width: 20, height: 11, color: rgb(120, 130, 121) });
-      drawEllipse({ pos: pos.add(vec2(-3, -2)), width: 10, height: 5, color: rgb(160, 167, 151), opacity: 0.6 });
+      drawEllipse({ pos, radiusX: 10, radiusY: 5.5, color: rgb(120, 130, 121) });
+      drawEllipse({ pos: pos.add(vec2(-3, -2)), radiusX: 5, radiusY: 2.5, color: rgb(160, 167, 151), opacity: 0.6 });
     }
     if (p.kind === "lantern") {
       drawRect({ pos: pos.add(vec2(-2, -6)), width: 4, height: 11, color: rgb(95, 70, 48) });
@@ -275,7 +275,7 @@ onDraw(() => {
     const pulse = 0.75 + Math.sin(time() * 2.3 + c.pulse) * 0.25;
     if (c.kind === "mushroom") {
       drawRect({ pos: vec2(c.x - 1, c.y + 2), width: 2, height: 5, color: rgb(237, 222, 191) });
-      drawEllipse({ pos: vec2(c.x, c.y), width: 13, height: 8, color: rgb(228, 101, 126) });
+      drawEllipse({ pos: vec2(c.x, c.y), radiusX: 6.5, radiusY: 4, color: rgb(228, 101, 126) });
     }
     if (c.kind === "crystal") {
       drawTriangle({ p1: vec2(c.x - 5, c.y + 6), p2: vec2(c.x + 5, c.y + 6), p3: vec2(c.x, c.y - 6), color: rgb(120, 220, 255) });
@@ -298,8 +298,8 @@ onDraw(() => {
   drawCircle({ pos: bonsaiSpot.add(vec2(0, -12)), radius: 10 * bonsaiScale, color: rgb(104, 178, 112) });
   drawCircle({ pos: bonsaiSpot.add(vec2(9, -10)), radius: 7 * bonsaiScale, color: rgb(96, 164, 102) });
 
-  drawEllipse({ pos: pondSpot, width: 120, height: 75, color: rgb(64, 124, 164) });
-  drawEllipse({ pos: pondSpot, width: 96, height: 56, color: rgb(81, 151, 188) });
+  drawEllipse({ pos: pondSpot, radiusX: 60, radiusY: 37.5, color: rgb(64, 124, 164) });
+  drawEllipse({ pos: pondSpot, radiusX: 48, radiusY: 28, color: rgb(81, 151, 188) });
   for (let i = 0; i < Math.min(22, save.pondFish); i++) {
     const angle = i * 0.9 + time() * (0.6 + (i % 3) * 0.1);
     const r = 12 + (i % 8) * 4;
@@ -307,14 +307,14 @@ onDraw(() => {
     drawCircle({ pos: fishPos, radius: 2, color: rgb(255, 232, 201), opacity: 0.75 });
   }
 
-  drawEllipse({ pos: breathSpot, width: 72, height: 44, color: rgb(96, 115, 107) });
+  drawEllipse({ pos: breathSpot, radiusX: 36, radiusY: 22, color: rgb(96, 115, 107) });
   drawCircle({ pos: breathSpot, radius: 18 + Math.sin(time() * 1.8) * 6, color: rgb(171, 203, 188), opacity: 0.2 });
 
-  drawEllipse({ pos: player.pos.add(vec2(0, 14)), width: 24, height: 9, color: rgb(18, 25, 24), opacity: 0.45 });
+  drawEllipse({ pos: player.pos.add(vec2(0, 14)), radiusX: 12, radiusY: 4.5, color: rgb(18, 25, 24), opacity: 0.45 });
   drawCircle({ pos: player.pos, radius: 12, color: skinColor[save.customization.skin] });
   drawRect({ pos: player.pos.add(vec2(-8, 8)), width: 16, height: 10, color: outfitColor[save.customization.outfit], radius: 4 });
 
-  drawEllipse({ pos: pet.pos.add(vec2(0, 8)), width: 20, height: 7, color: rgb(20, 22, 21), opacity: 0.37 });
+  drawEllipse({ pos: pet.pos.add(vec2(0, 8)), radiusX: 10, radiusY: 3.5, color: rgb(20, 22, 21), opacity: 0.37 });
   drawCircle({ pos: pet.pos, radius: 8, color: petColor[save.pet] });
 
   const cycle = (Math.sin(cycleT) + 1) / 2;
